@@ -22,8 +22,6 @@ describe('The first service', function(){
 			done();
 		});
 	});
-
-
 });	
 
 describe('The second service', function(){
@@ -36,26 +34,9 @@ describe('The second service', function(){
 			messageSender.emit('message', message);
 			
 			subscribers.on('message', function(msg){
-				message.should.equal(msg);
+				message.text.should.equal(msg.text);
 				done();
 			});	
 		});
 	});
 });
-/*
-	it('Should publish received messages into a message queue', function(done){
-		messageSender =  io.connect(listenerService, options);
-		
-		messageSender.on('connect', function(){
-			messageSender.on('message', function(msg){
-				messageSender.on('message_received', function(msg){
-
-				});
-			});
-			messageSender.emit(message);
-			done();
-		});
-
-	});
-
-*/
