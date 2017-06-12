@@ -1,0 +1,11 @@
+Launch the app in a commandline with
+node index.js
+
+Open a subscription in a new commandline
+
+Open a third commandline to send the messages:
+node send_a_message [message here]
+
+Tests can be run with mocha.
+
+Dependencies have been installed with yarn (see yarnpkg.com).
