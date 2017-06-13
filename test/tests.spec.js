@@ -1,17 +1,17 @@
-var should = require('should');
-var io = require('socket.io-client');
+const should = require('should');
+const io = require('socket.io-client');
 
-var listenerService = 'http://0.0.0.0:3000';
-var broadcastingService = 'http://0.0.0.0:3001';
+const listenerService = 'http://0.0.0.0:3000';
+const broadcastingService = 'http://0.0.0.0:3001';
 
-var options = {
+const options = {
 	transports: ['websocket'],
 	'force new connection': true
 };
 
-var message = {text: 'Hello World!'};
-var messageSender;
-var subscriber;
+const message = {text: 'Hello World!'};
+let messageSender;
+let subscriber;
 
 describe('The first service', function(){
 	it('Should listen for incoming messages through the websocket protocol', 
