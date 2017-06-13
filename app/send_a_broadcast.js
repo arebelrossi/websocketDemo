@@ -10,7 +10,7 @@ const broadcaster =  io.connect('http://0.0.0.0:3000');
 const commandlineInput = process.argv.slice(2).toString() || instructions();
 const message = { text: commandlineInput };
 
-broadcaster.on('connect', function(){
+broadcaster.on('connect', () => {
 	broadcaster.emit('message', message);
 	console.log(`sending message: ${message.text}`);
 });
